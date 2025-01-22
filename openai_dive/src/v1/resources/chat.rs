@@ -275,6 +275,9 @@ pub enum ChatMessage {
         content: Option<ChatMessageContent>,
         /// The refusal message by the assistant.
         #[serde(skip_serializing_if = "Option::is_none")]
+        reasoning_content: Option<String>,
+
+        #[serde(skip_serializing_if = "Option::is_none")]
         refusal: Option<String>,
         /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
         #[serde(skip_serializing_if = "Option::is_none")]
